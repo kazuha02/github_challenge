@@ -5,11 +5,16 @@ for (var i = 0; i < 20; i++) {
 }
 var getFizzBuzz = function (num) {
   if (num % 15 === 0) return 'FizzBuzz';
-  if (num % 3 === 0) return 'Fizz';
-  if (num % 5 === 0) return 'Buzz';
-  return num;
 };
 
-numbers.forEach(function(num) {
-  console.log(getFizzBuzz(num));
-;});
+var getFizz = function(num) {
+  if (num % 3 === 0) return 'Fizz';
+};
+
+var getBuzz = function(num) {
+  if (num % 5 === 0) return 'Buzz';
+};
+
+numbers.map(getFizzBuzz).map(getFizz).map(getBuzz).forEach(function(num) {
+  console.log(num);
+});
